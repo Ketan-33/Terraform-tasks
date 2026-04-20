@@ -4,7 +4,7 @@ resource "azurerm_service_plan" "this" {
   location            = var.location
   sku_name            = var.asp_sku
   os_type             = "Linux"
-  tsgs                = var.tags
+  tags                = var.tags
 }
 
 resource "azurerm_linux_web_app" "this" {

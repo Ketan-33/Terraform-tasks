@@ -34,6 +34,11 @@ variable "key_vault_name" {
   description = "Name of the Key Vault"
   type        = string
 }
+
+variable "key_vault_id" {
+  description = "Resource ID of the Key Vault"
+  type        = string
+}
 variable "kv_secret_name_sql_admin" {
   description = "Name of the Key Vault secret for SQL admin password"
   type        = string

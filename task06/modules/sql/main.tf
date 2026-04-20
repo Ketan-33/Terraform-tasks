@@ -38,7 +38,7 @@ resource "azurerm_mssql_database" "this" {
 resource "azurerm_key_vault_secret" "sql_admin_password" {
   name         = var.kv_secret_name_sql_password
   value        = random_password.sql_password.result
-  key_vault_id = azurerm_key_vault.this.id
+  key_vault_id = var.key_vault_id
 }
 
 

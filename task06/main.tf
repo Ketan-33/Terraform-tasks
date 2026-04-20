@@ -21,6 +21,7 @@ module "sql" {
   firewall_rule_name          = var.sql_firewall_rule_name
   allowed_ip_address          = var.allowed_ip_address
   key_vault_name              = var.kv_name
+  key_vault_id                = data.azurerm_key_vault.existing.id
   kv_secret_name_sql_admin    = var.kv_secret_name_sql_admin
   kv_secret_name_sql_password = var.kv_secret_name_sql_password
   tags                        = var.tags
