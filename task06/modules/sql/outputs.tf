@@ -5,6 +5,6 @@ output "sql_server_fqdn" {
 
 output "sql_connection_string" {
   description = "Connection string for the SQL Database"
-  value       = "Server=${azurerm_mssql_server.this.fully_qualified_domain_name};Database=${azurerm_mssql_database.this.name};User ID=${var.sql_admin_username};Password=${random_password.sql_password.result};Encrypt=true;Connection Timeout=30;"
+  value       = "Server=tcp:${azurerm_mssql_server.this.fully_qualified_domain_name},1433;Initial Catalog=${azurerm_mssql_database.this.name};Persist Security Info=False;User ID=${var.sql_admin_username};Password=${random_password.sql_password.result};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"
   sensitive   = true
 }
