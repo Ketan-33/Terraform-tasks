@@ -1,5 +1,5 @@
 name_prefix                 = "cmaz-9f1znn32-mod6"
-location                    = "East US"
+location                    = "Canada Central"
 kv_resource_group_name      = "cmaz-9f1znn32-mod6-kv-rg"
 kv_name                     = "cmaz-9f1znn32-mod6-kv"
 sql_admin_username          = "sqladminuser"
