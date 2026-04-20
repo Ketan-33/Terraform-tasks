@@ -16,7 +16,7 @@ resource_groups = {
 }
 
 tags = {
-  Creator = "mattaparthi_venkatprashanth@epam.com"
+  Creator = "ketan_thansinghpardhi@epam.com"
 }
 
 asp_configs = {
