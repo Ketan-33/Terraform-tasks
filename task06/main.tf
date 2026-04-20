@@ -32,6 +32,7 @@ module "webapp" {
   resource_group_name   = azurerm_resource_group.this.name
   location              = azurerm_resource_group.this.location
   asp_name              = local.asp_name
+  app_name              = local.app_name
   asp_sku               = var.asp_sku
   dotnet_version        = var.dotnet_version
   sql_connection_string = module.sql.sql_connection_string
