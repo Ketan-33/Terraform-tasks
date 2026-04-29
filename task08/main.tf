@@ -72,9 +72,11 @@ module "aci" {
 # K8s
 resource "kubectl_manifest" "secret_provider" {
   yaml_body = templatefile("${path.module}/k8s-manifests/secret-provider.yaml.tftpl", {
-    keyvault_name              = local.keyvault_name
+    kv_name                    = local.keyvault_name
     tenant_id                  = data.azurerm_client_config.current.tenant_id
-    kubelet_identity_client_id = module.aks.kubelet_identity_client_id
+    aks_kv_access_identity_id  = module.aks.secret_provider_identity_client_id
+    redis_url_secret_name      = "redis-hostname"
+    redis_password_secret_name = "redis-primary-key"
   })
 
   wait_for {

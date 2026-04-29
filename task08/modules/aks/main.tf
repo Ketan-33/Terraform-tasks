@@ -41,3 +41,12 @@ resource "azurerm_key_vault_access_policy" "aks" {
 
   secret_permissions = ["Get", "List"]
 }
+
+# Allow AKS Secrets Store CSI driver identity to read secrets from Key Vault
+resource "azurerm_key_vault_access_policy" "aks_csi" {
+  key_vault_id = var.keyvault_id
+  tenant_id    = data.azurerm_client_config.current.tenant_id
+  object_id    = azurerm_kubernetes_cluster.aks.key_vault_secrets_provider[0].secret_identity[0].object_id
+
+  secret_permissions = ["Get", "List"]
+}
