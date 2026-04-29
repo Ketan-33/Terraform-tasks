@@ -9,8 +9,8 @@ variable "location" {
 }
 
 variable "git_pat" {
-  type      = string
-  sensitive = true
+  type        = string
+  sensitive   = true
   description = "GitHub Personal Access Token for ACR task"
 }
 

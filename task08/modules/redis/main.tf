@@ -5,7 +5,7 @@ resource "azurerm_redis_cache" "redis" {
   capacity            = 2
   family              = "C"
   sku_name            = "Basic"
-  enable_non_ssl_port = false   # SSL only — port 6380
+  enable_non_ssl_port = false # SSL only — port 6380
 
   tags = var.tags
 }

@@ -64,8 +64,8 @@ module "aci" {
   tags                = var.tags
 
   depends_on = [
-    module.acr,     # image must be built first
-    module.redis    # secrets must exist
+    module.acr,  # image must be built first
+    module.redis # secrets must exist
   ]
 }
 
