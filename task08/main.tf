@@ -79,13 +79,6 @@ resource "kubectl_manifest" "secret_provider" {
     redis_password_secret_name = "redis-primary-key"
   })
 
-  wait_for {
-    field {
-      key   = "status.conditions.[0].status"
-      value = "True"
-    }
-  }
-
   depends_on = [module.aks]
 }
 
