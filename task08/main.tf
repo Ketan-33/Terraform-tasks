@@ -92,7 +92,9 @@ resource "kubectl_manifest" "secret_provider" {
 # K8s — Deployment manifest
 resource "kubectl_manifest" "deployment" {
   yaml_body = templatefile("${path.module}/k8s-manifests/deployment.yaml.tftpl", {
-    image = "${module.acr.login_server}/${local.docker_image_name}:latest"
+    acr_login_server = module.acr.login_server
+    app_image_name   = local.docker_image_name
+    image_tag        = "latest"
   })
 
   depends_on = [
