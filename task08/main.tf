@@ -98,7 +98,7 @@ resource "kubectl_manifest" "deployment" {
 
   depends_on = [
     kubectl_manifest.secret_provider,
-    module.aks
+    module.acr # image must be built first
   ]
 }
 
@@ -120,7 +120,7 @@ resource "kubectl_manifest" "service" {
 # Data source to get LB IP from deployed K8s service
 data "kubernetes_service" "app" {
   metadata {
-    name      = "app-service"
+    name      = "redis-flask-app-service"
     namespace = "default"
   }
 
