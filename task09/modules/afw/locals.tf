@@ -1,7 +1,7 @@
 locals {
   # Resource names following naming convention
   # cmtr-9f1znn32-mod9-<abbreviation>
-  firewall_subnet_name = "AzureFirewallSubnet"   # must be exactly this name
+  firewall_subnet_name = "AzureFirewallSubnet" # must be exactly this name
   pip_name             = "${var.name_prefix}-pip"
   firewall_name        = "${var.name_prefix}-afw"
   route_table_name     = "${var.name_prefix}-rt"

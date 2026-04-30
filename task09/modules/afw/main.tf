@@ -16,7 +16,7 @@ resource "azurerm_public_ip" "firewall" {
   sku                 = "Standard"
 
   lifecycle {
-    create_before_destroy = true   # required per task
+    create_before_destroy = true # required per task
   }
 }
 
@@ -41,7 +41,7 @@ resource "azurerm_route_table" "rt" {
   name                          = local.route_table_name
   location                      = var.location
   resource_group_name           = var.resource_group_name
-  disable_bgp_route_propagation = true
+  bgp_route_propagation_enabled = false
 
   route {
     name                   = "route-to-firewall"

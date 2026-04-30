@@ -48,7 +48,7 @@ variable "fw_sku_tier" {
 variable "fw_subnet_address_prefix" {
   type        = string
   description = "Address prefix for AzureFirewallSubnet"
-  default     = "10.0.1.0/26"   # must be at least /26
+  default     = "10.0.1.0/26" # must be at least /26
 }
 
 variable "app_rule_collections" {
@@ -58,9 +58,9 @@ variable "app_rule_collections" {
     priority = number
     action   = string
     rules = list(object({
-      name              = string
-      source_addresses  = list(string)
-      target_fqdns      = list(string)
+      name             = string
+      source_addresses = list(string)
+      target_fqdns     = list(string)
       protocols = list(object({
         port = string
         type = string
@@ -94,7 +94,7 @@ variable "app_rule_collections" {
             "changelogs.ubuntu.com"
           ]
           protocols = [
-            { port = "80",  type = "Http"  },
+            { port = "80", type = "Http" },
             { port = "443", type = "Https" }
           ]
         }
