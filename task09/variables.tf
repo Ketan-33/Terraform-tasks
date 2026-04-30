@@ -1,34 +1,18 @@
-variable "location" {
-  type        = string
-  description = "Azure region"
-  default     = "eastus"
-}
-
 variable "name_prefix" {
+  description = "Prefix for naming resources"
   type        = string
-  description = "Naming prefix for all resources"
-  default     = "cmtr-9f1znn32-mod9"
 }
 
-variable "resource_group_name" {
-  type        = string
-  description = "Existing resource group name"
-  default     = "cmtr-9f1znn32-mod9-rg"
-}
-
-variable "vnet_name" {
-  type        = string
-  description = "Existing VNet name"
-  default     = "cmtr-9f1znn32-mod9-vnet"
-}
-
-variable "aks_subnet_name" {
-  type        = string
-  description = "Existing AKS subnet name"
-  default     = "aks-snet"
+# Variables for Azure Firewall configuration
+variable "application_rules_protocol" {
+  description = "Protocol for the application rule (e.g., Http, Https)"
+  type = list(object({
+    protocol_type = string
+    port          = number
+  }))
 }
 
 variable "aks_loadbalancer_ip" {
+  description = "IP address of the AKS load balancer to allow in firewall rules"
   type        = string
-  description = "AKS Load Balancer public IP address"
 }
