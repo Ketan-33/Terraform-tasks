@@ -1,0 +1,6 @@
+location            = "eastus"
+name_prefix         = "cmtr-9f1znn32-mod9"
+resource_group_name = "cmtr-9f1znn32-mod9-rg"
+vnet_name           = "cmtr-9f1znn32-mod9-vnet"
+aks_subnet_name     = "aks-snet"
+aks_loadbalancer_ip = "20.62.222.254"
