@@ -1,0 +1,17 @@
+rg             = "cmaz-9f1znn32-mod4-rg"
+vnet           = "cmaz-9f1znn32-mod4-vnet"
+subnet         = "frontend"
+nic            = "cmaz-9f1znn32-mod4-nic"
+nsg            = "cmaz-9f1znn32-mod4-nsg"
+nsg_in_http    = "AllowHTTP"
+nsg_in_ssh     = "AllowSSH"
+public_ip      = "cmaz-9f1znn32-mod4-pip"
+dns            = "cmaz-9f1znn32-mod4-nginx"
+vm             = "cmaz-9f1znn32-mod4-vm"
+os_version     = "ubuntu-24_04-lts"
+vm_sku         = "Standard_B2s_v2"
+admin_username = "azureuser"
+ip_config_name = "internal"
+tags = {
+  "Creator" = "ketan_thansinghpardhi@epam.com"
+}
